@@ -1,0 +1,10 @@
+<hr>
+
+<% if model.is_a?(ActiveRecord::Base) %>
+  <span class="audit-created-at">
+    <%= created_by_info(model) %>
+  </span>
+<% end %>
+
+<%= audit_link(model) %>
+<%= render "audits", model: model if params[:show_log] %>

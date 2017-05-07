@@ -1,0 +1,19 @@
+pt-BR:
+  audits:
+    field: Campo
+    create: Criação
+    created_at: Criado há
+    created_by: por
+    data_hora: Data/Hora
+    destroy: Exclusão
+    link_text: Visualizar Log de Alterações
+    model: Tabela
+    new_value: Novo Valor
+    old_value: Valor Anterior
+    registro: Registro
+    registro_excluido: Registro Excluído
+    partial_title: Log de Alterações
+    update: Alteração
+    usuario: Usuário
+    true_word: Sim
+    false_word: Não

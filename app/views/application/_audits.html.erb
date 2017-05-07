@@ -1,0 +1,7 @@
+<a name="audits"></a>
+<hr>
+<h2><%= t("audits.partial_title") %></h2>
+
+<% audits_for(model).each do |audit| %>
+  <%= render partial: "audit_record", locals: {audit_record: audit} %>
+<% end %>

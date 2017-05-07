@@ -1,0 +1,55 @@
+<% if audit_record.audited_changes.find{|field, (old_value,new_value)| !old_value.blank? || !new_value.blank? } %>
+  <div class="panel <%= panel_class_for_audit_action(audit_record.action) %>">
+    <div class="panel-heading">
+      <b><%= t(audit_record.action, scope: "audits") %></b> -
+      <%= ltime audit_record.created_at %> -
+      <%= audit_record.user %>
+    </div>
+    <div class="panel-body">
+      <p>
+        <%= audit_record.auditable_type.constantize.model_name.human %>:
+        <b><%= audit_object_info(audit_record) %></b>
+      </p>
+
+      <table class="table">
+        <tr>
+          <th><%= t("audits.field") %></th>
+          <th><%= t("audits.old_value") %></th>
+          <th><%= t("audits.new_value") %></th>
+        </tr>
+        <% audit_record.audited_changes.each do |field, (old_value, new_value)| %>
+          <%# if !old_value.blank? || !new_value.blank? %>
+            <tr>
+              <td>
+                <%= audit_record_human_field(audit_record, field) %>
+              </td>
+              <% if audit_record.action == "update" && audit_record.auditable_type.constantize.column_for_attribute(field.to_sym).type == :text %>
+                <td colspan="2" class="diff">
+                  <%= sanitize Differ.diff(new_value, old_value).format_as(:html) %>
+                </td>
+              <% else %>
+                <td>
+                  <% if audit_record.action == "create" %>
+                    -
+                  <% else %>
+                    <%= format_audited_value old_value %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if audit_record.action == "create" %>
+                    <!-- #Como audited changes so possui um elemento no array de campos, aqui ele aparece no primeiro elemento, logo old_value do parametro do bloco -->
+                    <%= format_audited_value old_value  %>
+                  <% elsif audit_record.action == "destroy" %>
+                    -
+                  <% else %>
+                    <%= format_audited_value new_value %>
+                  <% end %>
+                </td>
+              <% end %>
+            </tr>
+          <%# end %>
+        <% end %>
+      </table>
+    </div>
+  </div>
+<% end %>
