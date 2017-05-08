@@ -21,9 +21,9 @@ module AuditedViewsHelper
   def audit_link(model, text = nil)
     text ||= I18n.t("audits.link_text")
     unless params[:show_log]
+      puts "request.path: '#{request.path}'"
       link_to "#{request.path}?show_log=true#audits", class: 'btn btn-default pull-right' do
-        raw(content_tag(:i, nil, class: "glyphicon glyphicon-time")) +
-        " #{text}"
+        text
       end
     end
   end
@@ -71,7 +71,7 @@ module AuditedViewsHelper
   def format_audited_value(value)
     case value
     when true, false
-      l("audited.#{value}_word")
+      t("audited.#{value}_word")
     when Date
       ldate value
     when NilClass

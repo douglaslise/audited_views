@@ -1,8 +1,15 @@
 # AuditedViews
-Short description and motivation.
+Views to show change logs collected by audited gem.
 
 ## Usage
-How to use my plugin.
+Add this to your `show` views:
+```
+<%= audited_controls(@product) %>
+```
+And this to your `index` views:
+```
+<%= audited_controls(@products) %>
+```
 
 ## Installation
 Add this line to your application's Gemfile:

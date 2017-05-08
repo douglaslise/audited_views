@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :product do
-    sku "MyString"
-    title "MyString"
-    price "9.99"
-    active false
-    description "MyText"
+    sku "001"
+    title "Smartphone"
+    price "450"
+    active true
+    description "Smartphone ABC"
   end
 end

@@ -52,6 +52,7 @@ GEM
     audited (4.4.1)
       activerecord (>= 4.0, < 5.2)
     builder (3.2.3)
+    byebug (9.0.6)
     capybara (2.13.0)
       addressable
       mime-types (>= 1.16)
@@ -151,7 +152,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  audited
   audited_views!
+  byebug
   capybara
   factory_girl_rails
   rspec-rails

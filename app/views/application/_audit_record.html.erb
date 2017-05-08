@@ -11,7 +11,7 @@
         <b><%= audit_object_info(audit_record) %></b>
       </p>
 
-      <table class="table">
+      <table class="table audits">
         <tr>
           <th><%= t("audits.field") %></th>
           <th><%= t("audits.old_value") %></th>
@@ -19,7 +19,7 @@
         </tr>
         <% audit_record.audited_changes.each do |field, (old_value, new_value)| %>
           <%# if !old_value.blank? || !new_value.blank? %>
-            <tr>
+            <tr data-audited-field="<%= field %>">
               <td>
                 <%= audit_record_human_field(audit_record, field) %>
               </td>

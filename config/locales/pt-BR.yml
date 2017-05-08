@@ -2,7 +2,7 @@ pt-BR:
   audits:
     field: Campo
     create: Criação
-    created_at: Criado há
+    created_at: Registro criado em
     created_by: por
     data_hora: Data/Hora
     destroy: Exclusão

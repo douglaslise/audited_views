@@ -1,0 +1,19 @@
+en:
+  audits:
+    field: Field
+    create: Creation
+    created_at: Created at
+    created_by: by
+    data_hora: Date/Time
+    destroy: Exclusion
+    link_text: Show Change Log
+    model: Table
+    new_value: New Value
+    old_value: Old Value
+    registro: Record
+    registro_excluido: Deleted Record
+    partial_title: Change Log
+    update: Update
+    usuario: User
+    true_word: Yes
+    false_word: No
