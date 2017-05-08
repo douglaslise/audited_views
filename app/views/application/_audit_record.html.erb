@@ -25,7 +25,7 @@
               </td>
               <% if audit_record.action == "update" && audit_record.auditable_type.constantize.column_for_attribute(field.to_sym).type == :text %>
                 <td colspan="2" class="diff">
-                  <%= sanitize Differ.diff(new_value, old_value).format_as(:html) %>
+                  <%= sanitize Differ.diff(new_value.to_s, old_value.to_s).format_as(:html) %>
                 </td>
               <% else %>
                 <td>
