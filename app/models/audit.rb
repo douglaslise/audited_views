@@ -1,4 +1,4 @@
-class Audit < ActiveRecord::Info
-  belongs_to :user, polypmorphic: true
+class Audit < ActiveRecord::Base
+  belongs_to :user, polymorphic: true
 
 end
