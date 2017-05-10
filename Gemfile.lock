@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    audited_views (0.0.1)
+    audited_views (0.0.2)
       audited
       differ
       rails
