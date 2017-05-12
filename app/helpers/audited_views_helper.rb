@@ -21,7 +21,6 @@ module AuditedViewsHelper
   def audit_link(model, text = nil)
     text ||= I18n.t("audits.link_text")
     unless params[:show_log]
-      puts "request.path: '#{request.path}'"
       link_to "#{request.path}?show_log=true#audits", class: 'btn btn-default pull-right' do
         text
       end
