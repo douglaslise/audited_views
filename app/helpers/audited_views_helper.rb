@@ -70,7 +70,7 @@ module AuditedViewsHelper
   def format_audited_value(value)
     case value
     when true, false
-      t("audited.#{value}_word")
+      t("audits.#{value}_word")
     when Date
       ldate value
     when NilClass
