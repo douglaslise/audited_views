@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/douglaslise/audited_views.svg?branch=master)](https://travis-ci.org/douglaslise/audited_views)
+
+
 # AuditedViews
 Views to show change logs collected by audited gem.
 
